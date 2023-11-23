@@ -1,0 +1,415 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(136, 141, 141);
+    overflow-x: hidden;
+}
+
+header {
+    position: -ms-page;
+    position: sticky;
+
+    top: 0; /*para que  quede en el margen de la pantalla*/
+    z-index: 10; 
+}
+
+#header {
+    padding: 1em;
+    background: linear-gradient(to right, rgb(116, 138, 137), rgb(27, 59, 59));  
+    box-shadow: 5px 1px 10px black;
+    border: solid;
+    border-color: rgb(100, 88, 88);
+}
+
+#navbarSupportedContent {
+    position: relative;
+    left: 5em;
+}
+
+li a {
+	padding: .562rem; /*antes 9px*/ 
+	margin: .29rem;  /*antes 4.64px*/ 
+	color: rgb(227, 226, 231) !important; 
+    font-size: 1.3em !important; /*antes 24px*/
+    text-align: center;
+    background-color: rgb(45, 98, 93) !important; 
+    box-shadow: 5px 1px 5px rgb(45, 31, 31); 
+    transition: all 1s linear 0.5s;
+}
+
+.nav-menu-link-active {
+    padding: .562rem; /*antes 9px*/ 
+	margin: .29rem;  /*antes 4.64px*/
+    text-decoration: none; 
+	color: rgb(190, 19, 39) !important;
+    font-size: 1.3em; /*antes 24px*/
+    font-weight: 600 !important;
+    background-color: rgb(153, 189, 186) !important; 
+    box-shadow: 5px 1px 5px rgb(45, 31, 31); 
+    transition: all 1s linear 0.5s;
+}
+
+.boton, #boton {
+    padding: .5rem;
+    margin-top: 1rem;
+    margin-left: 40%;
+    color: rgb(227, 226, 231);
+    font-size: 1em; /*antes 24px*/
+    background-color: rgb(45, 98, 93); 
+    box-shadow: 5px 1px 5px rgb(45, 31, 31); 
+    transition: all 1s linear 0.5s;
+}
+
+li a:hover, .boton:hover, #boton:hover, .nav-menu-link-active:hover {
+	background-color: #4c76a5 !important;
+	box-shadow: 5px 1px 5px rgb(135, 131, 131) !important;
+    transition: all 1s linear 0.1s;
+}
+
+#toggle {
+    border: none;
+    cursor: pointer;
+    transition: all 1s linear 0.5s;
+}
+
+
+#toggle:hover {
+    box-shadow: 5px 1px 5px rgb(227, 220, 220);
+    transition: all 1s linear 0.1s;
+}
+
+/*Para darle estilo al nombre del comercio*/
+h1 {
+    font-family: cursive;
+    font-size: 3em; /*antes 50px*/
+    font-style: italic;
+    text-shadow: 5px 1px 5px rgb(45, 38, 38);
+
+    animation-duration: 2s;
+    animation-name: luces;
+    z-index: 15;
+}
+
+h1 span {color: red;}
+
+@keyframes luces {
+    from{
+        text-shadow: 4px 5px 1px rgb(45, 38, 38);
+        color: rgb(202, 190, 190);
+        transform: translate(3em) scale(2) rotateY(360deg);
+    }
+    to {
+        text-shadow: 5px 2px 5px rgb(45, 38, 38);
+        color: rgb(44, 42, 42);
+    }
+}
+
+main {
+    margin: auto;
+    padding: auto;
+    font-weight: 600;
+    box-shadow: 5px 1px 10px black;
+    background-image: linear-gradient( to right,
+    rgba(244, 244, 245, 0.7),
+    rgba(116, 114, 114, 0.7)
+    ), url("../imagenes/tienda-frente.png");
+    background-size: 100%;
+}
+
+/*Se crean estas clases a fin de ubicar los articles usando flex y grid (no porque sea necesario)*/
+.sectionFlex {
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+}
+.sectionGrid {
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    justify-content: space-around;
+    align-content: space-around;
+    grid-gap: 1em;
+    padding: 1em;
+}
+
+.articleFlex {
+    position: relative;
+    margin: .625em; /*antes 10px*/
+    padding: .625em; /*antes 10px*/
+    width: 30%;
+}
+
+article {
+    border: solid;
+    border-radius: 5%;
+    animation-name: estirarElemento;
+    animation-duration: 1s;
+    transition: all 1s linear 0.5s;
+}
+
+@keyframes estirarElemento {
+    from { transform: scale(0, 1);}
+    to { transform: scale(1);}
+}
+
+article:hover {
+    color: white;
+    border-color: rgb(175, 173, 173);
+    background-color:  rgba(27, 59, 59, 0.4);
+    box-shadow: 5px 3px 5px rgb(227, 220, 220);
+    transition: all 1s linear 0.1s;
+}
+
+.imagen, .video, .mapa {
+    width: 90%;
+    margin-left: 5%;
+    border-radius: 5%;
+    filter: grayscale(90%);
+    transition: all 1s linear 0.5s;
+}
+
+.imagen:hover, .video:hover, .mapa:hover {
+    filter: grayscale(0);
+    box-shadow: 5px 3px 5px rgb(227, 220, 220);
+    transition: all 1s linear 0.1s;
+}
+
+table {
+    margin-top: 1.25em; /*antes 20px*/
+    width: 100%;
+    border: 1px solid #000;
+    border-collapse: collapse;
+}
+
+th, td {
+    vertical-align: top;
+    width: 25%;
+    text-align: center;
+    border: 1px solid #000;
+}
+
+h2 {text-align: center;}
+
+div > h2 {transition: all 1s linear 0.5s;}
+
+div > h2:hover {
+    text-shadow: 5px 1px 5px rgb(45, 38, 38);
+    transform: scale(1.3);
+    transition: all 1s linear 0.1s;
+}
+
+.ofertas {
+    display: block;
+    padding-top: 1.5em;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    transition: all 1s linear 0.5s;
+}
+
+.ofertas:hover {
+    color: white;
+    transform: scale(1.3);
+    transition: all 1s linear 0.2s;
+}
+
+/*Estilo de los formularios*/
+.datos {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-weight: 900;
+    border: none;
+    border-radius: 5px;
+    opacity: 0.2;
+    transition: opacity 1s linear 0.5s;
+}
+
+.datos:hover {
+    opacity: 1;
+    transition: opacity 1s linear 0.2s;
+}
+
+.boton_comprar {
+    position: relative;
+    left: 12rem;
+    bottom: 3.5rem;
+    font-size: 2rem;
+    border-radius: 20%;
+    box-shadow: 5px 3px 5px rgb(227, 220, 220);
+    visibility: hidden;
+    opacity: 0.6;
+    transition: all 1s linear 0.5s;
+}
+
+.boton_comprar:hover {
+    animation-name: sacudir;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+}
+
+@keyframes sacudir {
+    25% {transform: rotate(15deg);}
+    50% {transform: rotate(-15deg);}
+    75% {transform: rotate(7deg);}
+    100% {transform: rotate(-7deg);}
+}
+
+article:hover > .boton_comprar {
+    visibility: visible;
+    transition: all 1s linear 0.5s;
+}
+
+/*hace referencia a los links de las sucursales en google maps en contacto*/
+.links {
+    text-decoration: none;
+    color: black;
+    transition: color 1s linear 0.5s;
+}
+
+.links:hover {
+    color: white;
+    transition: color 1s linear 0.2s;
+}
+
+/*hace referencia al teléfono y mail en la pestaña de contacto*/
+.info {
+    display: flex;
+    flex-direction: column;
+    padding: .9375em; /*antes 15px*/
+    font-size: medium;
+    text-shadow: 5px 1px 5px rgb(45, 38, 38);
+}
+
+.info a {
+    margin-top: 0.5em;
+    text-decoration: none;
+    color: #000;
+}
+
+.promociones {
+    display: flex;
+    justify-content: center;
+    font-size: 1.625em; /*antes 26px*/
+    width: 100%;
+    overflow: hidden;} /*para que no me abra el scroll la animación*/
+
+.marcas {
+    display: flex;
+    list-style: none;
+    animation-duration: 25s;
+    animation-name: deslizable;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.logo {
+    margin-bottom: -1em;
+    padding: 0 0.1em;
+    background-color: rgba(255, 255, 255, 0.7);
+    opacity: 0.5;
+    filter: grayscale(100%);
+}
+
+/*Estilo general del box del footer*/
+footer {
+    padding : .625em; /*antes 10px*/
+    text-align: center;
+    text-shadow: 5px 1px 5px rgb(45, 38, 38);
+    background: linear-gradient(to right, rgb(116, 138, 137), rgb(27, 59, 59));     
+    box-shadow: 5px 1px 10px black;
+    border: solid;
+    border-color: rgb(100, 88, 88);
+}
+
+/*Estilo particular del contenido del footer*/
+.redes a i {
+    margin-right: 1.25rem; /*antes 20px*/
+    font-size: 1.875em; /*antes 30px*/
+    color: black;
+    transition: all 1s linear 0.5s;
+}
+
+.redes a i:hover {
+    color: white;
+    transform: scale(1.3);
+    transition: all 1s linear 0.1s;
+}
+
+#copyright {font-weight: 700;}
+
+@keyframes deslizable {
+    from {
+        margin-left: 200%;
+        width: 100%
+    }
+    to {
+        margin-right: 300%;
+        width: 100%;
+    }
+}
+
+/*Sección en la que comienza el código para hacer la página adaptativa a las distintas resoluciones
+como parte de la experimentación*/
+
+/*Computadoras de escritorio*/
+@media (max-width: 1250px) {
+    body { font-size: 14px; }
+}
+
+/*Portátiles*/
+@media (max-width: 992px) {
+    .sectionFlex {
+        flex-wrap: wrap;
+    }
+
+    .articleFlex {
+        width: 40%;
+    }
+
+    .sectionGrid {
+        grid-template-columns: 40% 40%;
+    }
+    @keyframes deslizable {
+        from {
+            margin-left: 200%;
+            width: 100%
+        }
+        to {margin-right: 400%;}
+    }
+}
+
+/*Tablets*/
+@media (max-width: 768px) {
+    body {font-size: 12px;}
+
+    .articleFlex {
+        width: 70%;
+    }
+
+    .sectionGrid {
+        grid-template-columns: 70%;
+    }
+
+    @keyframes deslizable {
+        from {
+            margin-left: 200%;
+            width: 100%
+        }
+        to {
+            margin-right: 500%;
+            width: 400%;
+        }
+    }
+}
+
+/*Celulares*/
+@media (max-width: 576px) {
+    .articleFlex {
+        width: 85%;
+    }
+
+    .sectionGrid {
+        grid-template-columns: 85%;
+    }
+}
